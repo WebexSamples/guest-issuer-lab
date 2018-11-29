@@ -1,0 +1,17 @@
+{
+  "name": "guest-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Kalsey <adam@kalsey.com> (http://www.kalsey.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "opn": "^5.4.0",
+    "request": "^2.88.0"
+  }
+}
