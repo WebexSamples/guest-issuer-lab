@@ -44,6 +44,18 @@ Terminate the node app (`^C` in the console) and restart it (`node step-3.js`). 
 
 Now change the `sub` on line 10 to some other value. Terminate and restart the node application. Reload your browser, and now you'll see that the conversation is empty. This is because the `sub` is the identifier for Guest user, and so with a new sub, Teams considers this as a new user.
 
+## Step 4
+
+This step shows using a Guest token with the Webex Javascript SDK to send a message.
+
+Edit `step-4.js` to have the same changes you did in Step 3 (don't forget the email address).
+
+The code from lines 22-24 creates an instance of the Webex SDK object, authenticates using the JWT, and then line 25 checks to ensure that authentication was successful. Lines 27-30 uses the `messages.create` method to send a message to the personEmail for the address you configured on line 9.
+
+Start the application (`node step-4.js`).
+
+Check your Webex Teams account, and you'll see a message of "Howdy!" from the Guest user.
+
 ## Further exploration
 
 Create a new Guest Issuer application. Use the new Issuer ID and Shared Secret with the same `sub` and `name`. See that this is a different conversation, as Teams recognizes the combination of `sub` and Issuer ID as unique. Two different Issuer IDs can have the same Sub, without it being the same conversation. This means that the sub only needs to be unique within your application, and not unique globally.
