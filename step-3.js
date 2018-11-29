@@ -10,10 +10,6 @@ var config = {
   "issuerSecret":  "YOUR-ISSUER-SECRET", // Use the Guest Issuer Shared Secret from your Guest app
   "yourEmail":  "you@example.com" // The email address you use with Webex Teams
 };
-config.issuerId = 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi9mMGFmZTM0Ny1jMmJkLTRlMDYtYTY4Zi0zYWQ5MmJiOTU3MzY';
-config.issuerSecret = '4S/J7dAs4XuCTte+mv9VpqVp2uAm0BeL3z5Q42uMqsQ=';
-config.yourEmail = 'akalsey@cisco.com';
-
 
 var app = express();
 var port = '5533';

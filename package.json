@@ -9,6 +9,7 @@
   "author": "Adam Kalsey <adam@kalsey.com> (http://www.kalsey.com/)",
   "license": "ISC",
   "dependencies": {
+    "ciscospark": "^1.32.23",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
     "opn": "^5.4.0",

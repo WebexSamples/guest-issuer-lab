@@ -1,3 +1,4 @@
+var CiscoWebex = require(`ciscospark`);
 var jwt = require('jsonwebtoken');
 
 var config = {
@@ -16,6 +17,19 @@ jwt.sign(
   Buffer.from(config.issuerSecret, 'base64'), // The shared secret from your Guest app
   { expiresIn: '10m' },
   function(err, token) {
-    console.log(token);
+    console.log({token});
+    const webex = new CiscoWebex();
+    webex.authorization.requestAccessTokenFromJwt({"jwt":token}).then(() => {
+        if (webex.canAuthorize) {
+            // Authorization is successful
+            return webex.messages.create({
+                text: 'Howdy!',
+                toPersonEmail: config.yourEmail
+            });
+        }
+    })
+    .catch(e => {
+        console.log('ERROR', e);
+    });
   }
 );
