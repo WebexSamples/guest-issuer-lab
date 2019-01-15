@@ -4,7 +4,7 @@ This lab shows how to use Guest Issuer and Webex Teams Widgets to generate a con
 
 ## Setup
 
-From your Node project, install the lab Node module dependancies jsonwebtoken by typing `npm install`
+From your Node project, install the lab Node module dependancies  by typing `npm install`
 
 ## Step 1
 
