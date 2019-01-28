@@ -31,12 +31,13 @@ app.get('/', function(req, res) {
               auth: {'bearer': token}
             },
             function (error, response, body) {
-              var bearer = JSON.parse(body).token;
-              console.log('OAuth token', bearer);
+              if (error) { console.log(error); }
+              var bearer = JSON.parse(body);
+              console.log('OAuth token', bearer.token);
               res.send(`<link  rel="stylesheet" href="https://code.s4d.io/widget-space/production/main.css">
               <script src="https://code.s4d.io/widget-space/production/bundle.js"></script>
               <div data-toggle="ciscospark-space"
-                      data-access-token="${bearer}"
+                      data-access-token="${bearer.token}"
                       data-to-person-email="${config.yourEmail}" />`);
             }
           );  
